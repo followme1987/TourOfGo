@@ -74,6 +74,8 @@ func main() {
 	otherDataStructure.WordCounter("foo boo zoo you foo foo you")
 
 	otherDataStructure.FunctionValue()
+
+	otherDataStructure.Fib()
 }
 
 func add(x, y int) int {
