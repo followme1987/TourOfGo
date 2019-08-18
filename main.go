@@ -2,6 +2,8 @@ package main
 
 import (
 	"fmt"
+	"github.com/followme1987/TourOfGo/controlFlow"
+	"github.com/followme1987/TourOfGo/otherDataStructure"
 	"math"
 	"math/rand"
 )
@@ -20,7 +22,9 @@ func main() {
 	fmt.Println("my faviour time is :", rand.Intn(10))
 	fmt.Println(add(1, 2))
 	wordA, wordB := swap("hello", "world")
+
 	fmt.Println(wordA, wordB)
+
 	fmt.Println(split(16))
 
 	var java string = "no"
@@ -31,6 +35,45 @@ func main() {
 	Conversion()
 
 	CheckType()
+
+	sum := controlFlow.ForLoop()
+
+	fmt.Println(sum)
+
+	sum2 := controlFlow.ForLikeWhile()
+	fmt.Println(sum2)
+
+	controlFlow.IfStatement()
+
+	controlFlow.SwitchStatement()
+
+	controlFlow.HowFarFromSat()
+
+	controlFlow.SwitchWithout()
+
+	controlFlow.DeferStatement()
+
+	controlFlow.StackDefer()
+
+	otherDataStructure.Pointers()
+
+	otherDataStructure.PointerWithStruct()
+
+	otherDataStructure.ArrayTest()
+
+	otherDataStructure.SliceTest()
+
+	otherDataStructure.SliceCapcity()
+
+	otherDataStructure.SliceMake()
+
+	otherDataStructure.SliceAppend()
+
+	otherDataStructure.SliceLoop()
+
+	otherDataStructure.WordCounter("foo boo zoo you foo foo you")
+
+	otherDataStructure.FunctionValue()
 }
 
 func add(x, y int) int {
@@ -63,5 +106,5 @@ func CheckType() {
 	num := 1
 	num2 := 1.1
 
-	fmt.Printf("the data type is %T,%T", num, num2)
+	fmt.Printf("the data type is %T,%T \n", num, num2)
 }
