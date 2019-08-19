@@ -3,7 +3,11 @@ package main
 import (
 	"fmt"
 	"github.com/followme1987/TourOfGo/controlFlow"
+	"github.com/followme1987/TourOfGo/interfaceTest"
+	"github.com/followme1987/TourOfGo/methods"
 	"github.com/followme1987/TourOfGo/otherDataStructure"
+	"github.com/followme1987/TourOfGo/stringers"
+	"github.com/followme1987/TourOfGo/typeSwitch"
 	"math"
 	"math/rand"
 )
@@ -76,6 +80,32 @@ func main() {
 	otherDataStructure.FunctionValue()
 
 	otherDataStructure.Fib()
+
+	v := methods.Vex{1, 2}
+	fmt.Println(v.MethodVex())
+
+	i := methods.IntObj(2)
+	fmt.Println(i.MethodInt())
+
+	v2 := &methods.Vex{1,2} //&Methods.Vex{1,2} will work as well that is the tradeoff of pointer receiver
+	v2.MethodWithPointer()
+	fmt.Println(v2.X,v2.Y)
+
+	fmt.Println(v2.MethodVex())
+
+	var human interfaceTest.Human
+	stu := &interfaceTest.Student{"tom"}
+	human = stu
+	fmt.Println(human.Eat())
+
+	interfaceTest.EmptyInterfaceTest()
+
+	CheckType()
+
+	typeSwitch.Do("10")
+
+	ip := stringers.IPAddr{127,0,0,1}
+	fmt.Println(ip)
 }
 
 func add(x, y int) int {
