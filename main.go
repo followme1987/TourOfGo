@@ -3,13 +3,18 @@ package main
 import (
 	"fmt"
 	"github.com/followme1987/TourOfGo/controlFlow"
+	"github.com/followme1987/TourOfGo/error"
 	"github.com/followme1987/TourOfGo/interfaceTest"
 	"github.com/followme1987/TourOfGo/methods"
 	"github.com/followme1987/TourOfGo/otherDataStructure"
+	"github.com/followme1987/TourOfGo/reader"
 	"github.com/followme1987/TourOfGo/stringers"
 	"github.com/followme1987/TourOfGo/typeSwitch"
+	"io"
 	"math"
 	"math/rand"
+	"os"
+	"strings"
 )
 
 var (
@@ -106,6 +111,22 @@ func main() {
 
 	ip := stringers.IPAddr{127,0,0,1}
 	fmt.Println(ip)
+
+	if v,err:=error.Sqrt(2); err != nil {
+		fmt.Println(err)
+	}else{
+		fmt.Println(v)
+	}
+
+	if v,err:=error.Sqrt(-2); err != nil {
+		fmt.Println(err)
+	}else{
+		fmt.Println(v)
+	}
+
+	s := strings.NewReader("Lbh penpxrq gur pbqr!")
+	r := reader.Rot13Reader{s}
+	io.Copy(os.Stdout, &r)
 }
 
 func add(x, y int) int {
