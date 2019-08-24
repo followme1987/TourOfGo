@@ -2,6 +2,8 @@ package main
 
 import (
 	"fmt"
+	"github.com/followme1987/TourOfGo/channelFibonacci"
+	"github.com/followme1987/TourOfGo/channelWithSelectFib"
 	"github.com/followme1987/TourOfGo/controlFlow"
 	"github.com/followme1987/TourOfGo/error"
 	"github.com/followme1987/TourOfGo/interfaceTest"
@@ -9,6 +11,7 @@ import (
 	"github.com/followme1987/TourOfGo/otherDataStructure"
 	"github.com/followme1987/TourOfGo/reader"
 	"github.com/followme1987/TourOfGo/stringers"
+	"github.com/followme1987/TourOfGo/tickboom"
 	"github.com/followme1987/TourOfGo/typeSwitch"
 	"io"
 	"math"
@@ -127,6 +130,27 @@ func main() {
 	s := strings.NewReader("Lbh penpxrq gur pbqr!")
 	r := reader.Rot13Reader{s}
 	io.Copy(os.Stdout, &r)
+
+	ch := make(chan int, 10)
+	channelFibonacci.FibWithChannel(ch, cap(ch))
+
+	for i := range ch {
+		fmt.Printf("%v,", i)
+	}
+
+	tickboom.TickBoom()
+
+	ch2 := make(chan int)
+	quit := make(chan int)
+	go func() {
+		for i := 0; i < 15; i++ {
+			fmt.Println(<-ch2)
+		}
+
+		quit <- 0
+	}()
+
+	channelWithSelectFib.FibWithSelect(ch2, quit)
 }
 
 func add(x, y int) int {
