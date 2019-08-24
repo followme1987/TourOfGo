@@ -92,9 +92,9 @@ func main() {
 	i := methods.IntObj(2)
 	fmt.Println(i.MethodInt())
 
-	v2 := &methods.Vex{1,2} //&Methods.Vex{1,2} will work as well that is the tradeoff of pointer receiver
+	v2 := &methods.Vex{1, 2} //&Methods.Vex{1,2} will work as well that is the tradeoff of pointer receiver
 	v2.MethodWithPointer()
-	fmt.Println(v2.X,v2.Y)
+	fmt.Println(v2.X, v2.Y)
 
 	fmt.Println(v2.MethodVex())
 
@@ -109,18 +109,18 @@ func main() {
 
 	typeSwitch.Do("10")
 
-	ip := stringers.IPAddr{127,0,0,1}
+	ip := stringers.IPAddr{127, 0, 0, 1}
 	fmt.Println(ip)
 
-	if v,err:=error.Sqrt(2); err != nil {
+	if v, err := error.Sqrt(2); err != nil {
 		fmt.Println(err)
-	}else{
+	} else {
 		fmt.Println(v)
 	}
 
-	if v,err:=error.Sqrt(-2); err != nil {
+	if v, err := error.Sqrt(-2); err != nil {
 		fmt.Println(err)
-	}else{
+	} else {
 		fmt.Println(v)
 	}
 
