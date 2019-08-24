@@ -20,5 +20,4 @@ func CheckType() {
 
 	fmt.Println(v)
 
-
 }

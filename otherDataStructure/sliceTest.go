@@ -28,32 +28,32 @@ func SliceCapcity() {
 	fmt.Printf("%d,%d,%v \n", len(s), cap(s), s)
 
 	var s2 []int
-	if  s2 == nil {
+	if s2 == nil {
 		fmt.Printf("%d,%d,%v \n", len(s2), cap(s2), s2)
 	}
 }
 
-func SliceMake(){
-	a := make([]int,2)
-	b:=make([]int,2,4)
+func SliceMake() {
+	a := make([]int, 2)
+	b := make([]int, 2, 4)
 
-	fmt.Printf("%d,%d,%v \n",len(a),cap(a),a)
-	fmt.Printf("%d,%d,%v \n",len(b),cap(b),b)
+	fmt.Printf("%d,%d,%v \n", len(a), cap(a), a)
+	fmt.Printf("%d,%d,%v \n", len(b), cap(b), b)
 }
 
-func SliceAppend(){
+func SliceAppend() {
 	var s []int
-	s = append(s,1)
+	s = append(s, 1)
 	fmt.Println(s)
 
-	s=append(s,2,3,4,5,6)
+	s = append(s, 2, 3, 4, 5, 6)
 	fmt.Println(s)
 }
 
-func SliceLoop(){
+func SliceLoop() {
 
-	s := []int{1,2,3,4}
-	for i,v := range s{
-		fmt.Printf("%v,%v \n",i,v)
+	s := []int{1, 2, 3, 4}
+	for i, v := range s {
+		fmt.Printf("%v,%v \n", i, v)
 	}
 }

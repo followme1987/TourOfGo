@@ -11,7 +11,7 @@ func WordCounter(str string) {
 
 	for _, val := range words {
 		if _, ok := wordMap[val]; ok {
-			wordMap[val] ++
+			wordMap[val]++
 		} else {
 			wordMap[val] = 1
 		}

@@ -2,7 +2,7 @@ package interfaceTest
 
 import "fmt"
 
-type Human interface{
+type Human interface {
 	Eat() string
 }
 
@@ -13,7 +13,6 @@ func (stu *Student) Eat() string {
 type Student struct {
 	Name string
 }
-
 
 func EmptyInterfaceTest() {
 	var anything interface{}

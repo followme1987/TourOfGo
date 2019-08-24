@@ -1,7 +1,7 @@
 package methods
 
 type Vex struct {
-	X,Y int
+	X, Y int
 }
 
 type IntObj int
@@ -14,8 +14,7 @@ func (i IntObj) MethodInt() int {
 	return int(i)
 }
 
-
 func (v *Vex) MethodWithPointer() {
-	v.X =5
+	v.X = 5
 	v.Y = 6
 }
