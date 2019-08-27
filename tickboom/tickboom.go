@@ -6,8 +6,8 @@ import (
 )
 
 func TickBoom() {
-	tick := time.Tick(100 * time.Millisecond)
-	boom := time.After(500 * time.Millisecond)
+	tick := time.Tick(50 * time.Millisecond)
+	boom := time.After(5000 * time.Millisecond)
 
 	for {
 		select {
@@ -18,7 +18,7 @@ func TickBoom() {
 			return
 		default:
 			fmt.Println("  .")
-			time.Sleep(50 * time.Millisecond)
+			time.Sleep(5 * time.Millisecond)
 		}
 
 	}
