@@ -151,10 +151,22 @@ func main() {
 	}()
 
 	channelWithSelectFib.FibWithSelect(ch2, quit)
+
+	fmt.Println(Sum(2,1,3))
+
+	nums := []int {1,2,3}
+	fmt.Println(Sum(nums...))
 }
 
 func add(x, y int) int {
 	return x + y
+}
+func Sum (nums ...int) (result int) {
+	result = 0
+	for _,i := range nums{
+		result += i
+	}
+	return
 }
 
 // return Multi results
